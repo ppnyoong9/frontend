@@ -1,6 +1,7 @@
 import Header from "./layout/Header";
 import Main from "./component/Main";
 import CartList from "./component/CartList";
+import Order from "./component/Order.js";
 import "./css/styles.css";
 import "./assets/js/color-modes";
 import "./assets/dist/css/bootstrap.min.css";
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" exact element={ <Main/>}/>
       <Route path="/shop_main" element={ <Main/>}/>
       <Route path="/cart_list" element={ <CartList/>}/>
+      <Route path="/order" element={ <Order/>}/>
     </Routes>
     </>
   );

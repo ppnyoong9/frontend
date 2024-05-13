@@ -3,12 +3,12 @@ h2 {
 }
 
 .MenuBox{
-    width: 70%;
+    width: 80%;
     /* border: 1px solid rgb(220, 219, 220); */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    line-height: 90px;
+    line-height: 40px;
     align-items: center;
     margin-top: 30px;
 }
@@ -18,10 +18,10 @@ h2 {
 
 .table1 {
     width: 100%;
+    text-align: center;
 }
 
 .tbody1 {
-    border: 1px solid rgb(195, 194, 194);
     font-size: 16px;
    
 }
@@ -29,44 +29,68 @@ h2 {
 .qbtn-div {
     display: flex;
     align-items: center;
-    justify-content: left; /* 수평 가운데 정렬도 추가합니다 */
+    justify-content: center; /* 수평 가운데 정렬도 추가합니다 */
 }
 
 .qbtn-div > .qbtn {
     border: 1px solid rgb(222, 221, 221);
     border-radius: 10px;
     font-size: 16px;
-    width: 60px;
-    height: 30px;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
     background-color: rgb(255, 249, 243);
     transition: all 0.3s;
+    margin: 3px;
     display: flex; /* 텍스트를 수직으로 정렬하기 위해 추가합니다 */
     align-items: center; /* 텍스트를 수직으로 정렬하기 위해 추가합니다 */
     justify-content: center; /* 텍스트를 수평으로 정렬하기 위해 추가합니다 */
 }
 
 .tbody1 button {
+    display: inline-block; 
     border: 1px solid rgb(222, 221, 221);
-    border-radius: 10px;
+    border-radius: 20px;
     font-size: 16px;
-    width: 60px;
-    height: 30px;
+    width: 50%;
+    height: 40px;
     cursor: pointer;
     background-color: rgb(255, 249, 243);
     transition: all 0.3s;
+    line-height: 0;
+    text-align: center;
+    margin: 3px;
+} 
+ .bottomBtn {
+    display: inline-block; 
+    border: 1px solid rgb(222, 221, 221);
+    border-radius: 10px;
+    font-size: 16px;
+    width: 10%;
+    height: 60px;
+    cursor: pointer;
+    background-color: #ffd95a;
+    transition: all 0.3s;
+    text-align: center;
 } 
 
 
+.bottomBtn:hover {
+    background-color: #ffe180;
+} 
+
+.bottomButtonsContainer{
+    padding-top: 40px;
+}
+
 .tbody1 button:hover {
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(255, 246, 211);
     font-weight: bold;
 } 
 
 
 .tbody1 > tr > td {
     width: 10vw;
-    text-align: center;
 }
 
 
@@ -76,14 +100,26 @@ h2 {
 }
 
 
-
 .tbody1 > tr > td:first-child {
     width: 2vw;
     height:8vw; 
   }
 
+.CustomCheckbox{
+    text-align: center;
+}
 
 
+.product-tr{
+    border-top: 1px solid rgb(195, 194, 194);
+}
+
+td{
+    padding: 15px 5px;
+}
+th{
+    padding-bottom: 10px;
+}
 
 /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
 @media all and (min-width:270px) and (max-width:800px) {
@@ -111,11 +147,20 @@ h2 {
     }
 
     .tbody1 {
-        border: 1px solid rgb(195, 194, 194);
+        font-size: 9px;
+    }
+    th  {
         font-size: 9px;
     }
 
-    .tbody1 button {
+    .tbody1 button.qbtn  {
+        width: 20px;
+        height: 10px;
+        border-radius: 7px;
+        font-size: 9px;
+    } 
+  
+    .tbody1 button  {
         width: 36px;
         height: 20px;
         border-radius: 7px;

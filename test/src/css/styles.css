@@ -4,6 +4,16 @@
   font-weight: normal;
   src: url("../fonts/GmarketSansTTFMedium.woff2") format("woff2");
 }
+@font-face {
+  font-family: "GmarketSansTTFLight";
+  font-weight: normal;
+  src: url("../fonts/GmarketSansTTFLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "GmarketSansTTFBold";
+  font-weight: normal;
+  src: url("../fonts/GmarketSansTTFBold.woff2") format("woff2");
+}
 
 html body {
   font-family: "GmarketSansTTFMedium";
