@@ -1,226 +1,368 @@
-import React from 'react'
-import "../css/checkout.css";
+import React from "react";
+import "../css/order.css";
+
+/*
+js 살펴봐야함 
+// Example starter JavaScript htmlFor disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classNameList.add('was-validated')
+    }, false)
+  })
+})() 
+*/
 
 function Order() {
   return (
     <>
-    <div class="container">
-  <main>
-    <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"/>
-      <h2>Checkout form</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Product name</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Third item</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
-            <div class="text-success">
-              <h6 class="my-0">Promo code</h6>
-              <small>EXAMPLECODE</small>
-            </div>
-            <span class="text-success">−$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
-
-        <form class="card p-2">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Promo code"/>
-            <button type="submit" class="btn btn-secondary">Redeem</button>
+      <div className="container">
+        <main>
+          <div className="py-5 text-center">
+            <h2>주문/결제</h2>
+            <p className="lead">
+              주문 전 공지사항에 있는 유의사항을 참고해주세요
+            </p>
           </div>
-        </form>
-      </div>
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" novalidate>
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required/>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
 
-            <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required/>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
+          {/* 결제정보 시작 */}
+          <div className="row g-5">
+            <div className="col-md-5 col-lg-4 order-md-last">
+              <h4 className="d-flex justify-content-between align-items-center mb-3">
+                <span className="text-primary">결제 정보</span>
+                <span className="badge bg-primary rounded-pill">3</span>
+              </h4>
+              <ul className="list-group mb-3">
+                <li className="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 className="my-3">주문 상품</h6>
+                  </div>
+                  <span
+                    className="text-body-secondary"
+                    style={{ lineHeight: "3" }}
+                  >
+                    566,000원
+                  </span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
+                  <div className="text-success">
+                    <h6 className="my-3">할인</h6>
+                  </div>
+                  <span className="text-success" style={{ lineHeight: "3" }}>
+                    −30,000원
+                  </span>
+                </li>
+                <li className="list-group-item d-flex justify-content-between pt-3 pb-3">
+                  <span>최종 결제 금액</span>
+                  <strong>563,000원</strong>
+                </li>
+              </ul>
+              {/* 결제정보 끝 */}
 
-            <div class="col-12">
-              <label for="username" class="form-label">Username</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required/>
-              <div class="invalid-feedback">
-                  Your username is required.
+              {/* 할인쿠폰 시작*/}
+              <form className="card p-2">
+                <div className="input-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Promo code"
+                  />
+                  <button type="submit" className="btn btn-secondary">
+                    Redeem
+                  </button>
                 </div>
-              </div>
-            </div>
+              </form>
+              {/* 할인쿠폰 끝 */}
 
-            <div class="col-12">
-              <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com"/>
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
+              {/* 배송지 시작 */}
             </div>
+            <div className="col-md-7 col-lg-8">
+              <h4 className="mb-4">배송지</h4>
+              <form className="needs-validation" noValidate>
+                <div className="row g-3">
+                  {/* 받는사람 시작 */}
+                  <div className="col-12">
+                    <label htmlFor="username" className="form-label">
+                      받는사람
+                    </label>
+                    <div className="input-group has-validation">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="username"
+                        placeholder=""
+                        required
+                      />
+                      <div className="invalid-feedback">
+                        이름을 입력해주세요.
+                      </div>
+                    </div>
+                  </div>
+                  {/* 받는사람 끝 */}
+                  {/* 휴대폰 번호 시작 */}
+                  <div className="col-12">
+                    <label htmlFor="username" className="form-label">
+                      휴대전화
+                    </label>
+                    <div className="input-group has-validation">
+                      <select
+                        className="form-select"
+                        id="hp"
+                        style={{ color: "rgba(33, 37, 41, 0.75)" }}
+                      >
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                      </select>
+                      <span style={{ lineHeight: "3" }}> &nbsp;-&nbsp;</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="username"
+                        placeholder=""
+                        required
+                      />
+                      <span style={{ lineHeight: "3" }}> &nbsp;-&nbsp;</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="username"
+                        placeholder=""
+                        required
+                      />
+                      <div className="invalid-feedback">
+                        이름을 입력해주세요.
+                      </div>
+                    </div>
+                  </div>
+                  {/* 휴대폰 번호  끝 */}
 
-            <div class="col-12">
-              <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required/>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
+                  {/* 주소 시작 */}
+                  <div style={{display: 'flex', alignItems: 'center'}}>
+                  <label htmlFor="address" className="form-label" style={{marginRight:'40px' }}>
+                    주소 
+                  </label>
+                  <button className="addrList" type="button"> 배송지 목록</button>
+                  </div>
+                  <div className="input-group has-validation">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="addrPost"
+                      placeholder="우편번호"
+                      required
+                    />
+                    <button className="input-group-text">주소찾기</button>
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="addr"
+                      placeholder="주소"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="addrDetail"
+                      placeholder="상세주소"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <select
+                      className="form-select"
+                      id="hp"
+                      style={{ color: "rgba(33, 37, 41, 0.75)" }}
+                    >
+                      <option value="">
+                        &lt; 배송요청사항 (선택사항) &gt;{" "}
+                      </option>
+                      <option value="sReq-1">
+                        배송 전에 미리 연락바랍니다
+                      </option>
+                      <option value="sReq-2">
+                        부재 시 경비실에 맡겨주세요.
+                      </option>
+                      <option value="sReq-3">
+                        부재 시 문 앞에 놓아주세요.
+                      </option>
+                      <option value="sReq-4">빠른 배송 부탁드립니다.</option>
+                      <option value="sReq-5">택배함에 보관해 주세요.</option>
+                      <option value="sReq-input">직접 입력</option>
+                    </select>
+                  </div>
+                  <div className="invalid-feedback">주소를 입력해주세요.</div>
+                  {/* 주소 끝 */}
+                </div>
+                {/* 배송지 끝 */}
 
-            <div class="col-12">
-              <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite"/>
-            </div>
+                <hr className="my-4" />
 
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
+                <div className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id="same-address"
+                  />
+                  <label className="form-check-label" htmlFor="same-address">
+                    기본 배송정보 불러오기
+                  </label>
+                </div>
 
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
+                <div className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id="save-info"
+                  />
+                  <label className="form-check-label" htmlFor="save-info">
+                    이 배송지를 저장합니다.
+                  </label>
+                </div>
 
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required/>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
+                <hr className="my-4" />
+
+                <h4 className="mb-3">Payment</h4>
+
+                <div className="my-3">
+                  <div className="form-check">
+                    <input
+                      id="credit"
+                      name="paymentMethod"
+                      type="radio"
+                      className="form-check-input"
+                      checked
+                      required
+                    />
+                    <label className="form-check-label" htmlFor="credit">
+                      Credit card
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      id="debit"
+                      name="paymentMethod"
+                      type="radio"
+                      className="form-check-input"
+                      required
+                    />
+                    <label className="form-check-label" htmlFor="debit">
+                      Debit card
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      id="paypal"
+                      name="paymentMethod"
+                      type="radio"
+                      className="form-check-input"
+                      required
+                    />
+                    <label className="form-check-label" htmlFor="paypal">
+                      PayPal
+                    </label>
+                  </div>
+                </div>
+
+                <div className="row gy-3">
+                  <div className="col-md-6">
+                    <label htmlFor="cc-name" className="form-label">
+                      Name on card
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="cc-name"
+                      placeholder=""
+                      required
+                    />
+                    <small className="text-body-secondary">
+                      Full name as displayed on card
+                    </small>
+                    <div className="invalid-feedback">
+                      Name on card is required
+                    </div>
+                  </div>
+
+                  <div className="col-md-6">
+                    <label htmlFor="cc-number" className="form-label">
+                      Credit card number
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="cc-number"
+                      placeholder=""
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Credit card number is required
+                    </div>
+                  </div>
+
+                  <div className="col-md-3">
+                    <label htmlFor="cc-expiration" className="form-label">
+                      Expiration
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="cc-expiration"
+                      placeholder=""
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Expiration date required
+                    </div>
+                  </div>
+
+                  <div className="col-md-3">
+                    <label htmlFor="cc-cvv" className="form-label">
+                      CVV
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="cc-cvv"
+                      placeholder=""
+                      required
+                    />
+                    <div className="invalid-feedback">
+                      Security code required
+                    </div>
+                  </div>
+                </div>
+
+                <hr className="my-4" />
+
+                <button className="w-100 btn btn-primary btn-lg" type="submit">
+                  Continue to checkout
+                </button>
+              </form>
             </div>
           </div>
-
-          <hr class="my-4"/>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address"/>
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info"/>
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div>
-
-          <hr class="my-4"/>
-
-          <h4 class="mb-3">Payment</h4>
-
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required/>
-              <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-            <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required/>
-              <label class="form-check-label" for="debit">Debit card</label>
-            </div>
-            <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required/>
-              <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
-          </div>
-
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-name" class="form-label">Name on card</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required/>
-              <small class="text-body-secondary">Full name as displayed on card</small>
-              <div class="invalid-feedback">
-                Name on card is required
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required/>
-              <div class="invalid-feedback">
-                Credit card number is required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required/>
-              <div class="invalid-feedback">
-                Expiration date required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required/>
-              <div class="invalid-feedback">
-                Security code required
-              </div>
-            </div>
-          </div>
-
-          <hr class="my-4"/>
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-        </form>
+        </main>
       </div>
-    </div>
-  </main>
-    </div>
-    
     </>
-
-  )
+  );
 }
 
-export default Order
+export default Order;

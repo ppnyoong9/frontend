@@ -78,3 +78,20 @@
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
 }
+
+.form-check{
+  padding: 5px 0px;
+}
+
+.addrList {
+  display: block;
+    width: 20%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--bs-body-color);
+    background-color: rgb(233, 233, 233);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}

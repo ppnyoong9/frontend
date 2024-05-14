@@ -54,19 +54,21 @@ function CartList() {
               <th>선택</th>
             </tr>
             <tbody className="Tbody tbody1">
-              {/* procut 아이템 1개 */}
+              {/* procut 아이템 1개 시작 */}
+              {/*  products.map((product, index) 아이템 뿌리게 되면 이걸로 바꾸기! */}
               {Array(5)
                 .fill()
                 .map((_, index) => (
                   <tr className="product-tr">
                     <td className="checkbox-td">
+                      {/* 개별 체크박스 시작*/}
                       <CustomCheckbox
                         checked={isCheckedItems[index]}
                         onChange={(isChecked) =>
                           handleCheckItem(index, isChecked)
                         }
-                      />{" "}
-                      {/* 개별 체크박스 */}
+                      />
+                      {/* 개별 체크박스 끝*/}
                     </td>
                     <td>
                       <img src={"./image/lunchBox.jpg"} alt="Product Image" />
@@ -77,12 +79,11 @@ function CartList() {
                     </td>
                     <td>595,000원</td>
                     <td>
-                      <button className="buttTxt">주문하기</button>
-                      <button className="buttTxt">삭제하기</button>
+                      <button className="buttTxt">삭제</button>
                     </td>
                   </tr>
                 ))}
-              {/* procut 아이템 1개 */}
+              {/* procut 아이템 1개 끝 */}
             </tbody>
             {/* 하단 버튼 */}
             <tfoot>
@@ -90,8 +91,17 @@ function CartList() {
                 <td colSpan="6" className="bottomButtonsContainer">
                   <div style={{ textAlign: "left" }}>
                     <button className="bottomBtn">선택삭제</button>
-                    <button className="bottomBtn" style={{ float: "right" , marginRight:'60px'}}>
+                    <button
+                      className="bottomBtn"
+                      style={{ float: "right", marginRight: "60px" }}
+                    >
                       쇼핑 계속하기
+                    </button>
+                    <button
+                      className="bottomBtn"
+                      style={{ float: "right", marginRight: "20px" }}
+                    >
+                      주문 하기
                     </button>
                   </div>
                 </td>

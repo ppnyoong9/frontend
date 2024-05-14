@@ -14,6 +14,7 @@ function QuantityCounter() {
     }
   };
 
+
   return (
     <div className='qbtn-div'>
       <button className='qbtn' onClick={decrementQuantity}>-</button>

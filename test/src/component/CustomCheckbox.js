@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 function CustomCheckbox({ checked, onChange }) {
   const [isChecked, setIsChecked] = useState(checked);
 
-  // 부모 컴포넌트로부터 전달된 checked prop이 변경될 때마다 isChecked 상태를 업데이트합니다.
+  // 부모 컴포넌트로부터 전달된 checked prop이 변경될 때마다 isChecked 상태를 업데이트
   useEffect(() => {
     setIsChecked(checked);
   }, [checked]);
