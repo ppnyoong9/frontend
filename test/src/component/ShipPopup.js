@@ -7,7 +7,7 @@ function ShipPopup() {
       {/* 배송지 변경 팝업 - 사이즈 : 500 * 974  */}
       <div className="n-popup-wrap popup-address-list">
         <h1 className="popup-tit">배송지 목록</h1>
-        <a href="" className="n-link" onClick="">
+        <a href="" className="n-link">
           <span>신규 배송지 등록</span>
         </a>
         {/* 배송지 목록 */}

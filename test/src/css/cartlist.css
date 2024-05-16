@@ -2,6 +2,7 @@ h2 {
     width:100%;
 }
 
+
 .productBox{
     width: 80%;
     /* border: 1px solid rgb(220, 219, 220); */
@@ -17,6 +18,7 @@ h2 {
 .table1 {
     width: 100%;
     text-align: center;
+    margin-top: 10px;
 }
 
 .tbody1 {
@@ -49,8 +51,8 @@ h2 {
     display: inline-block; 
     border: 1px solid rgb(222, 221, 221);
     border-radius: 20px;
-    font-size: 16px;
-    width: 50%;
+    font-size: 13px;
+    width: 130px;
     height: 40px;
     cursor: pointer;
     background-color: rgb(255, 249, 243);
@@ -64,8 +66,8 @@ h2 {
     border: 1px solid rgb(222, 221, 221);
     border-radius: 10px;
     font-size: 16px;
-    width: 10%;
-    height: 60px;
+    width: 180px;
+    height: 50px;
     cursor: pointer;
     background-color: #ffd95a;
     transition: all 0.3s;
@@ -127,7 +129,7 @@ th{
         font-size: 9px;
         width: 80%;
     }
-    .MenuBox{
+    .productBox{
         width: 100%;
         display: flex;
         justify-content: center;
@@ -163,7 +165,7 @@ th{
         width: 36px;
         height: 20px;
         border-radius: 7px;
-        font-size: 9px;
+        font-size: 6px;
     } 
 
     .bottomBtn {
@@ -172,6 +174,8 @@ th{
         border-radius: 7px;
         font-size: 9px;
     }
+
+    
 } 
 
 

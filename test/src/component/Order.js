@@ -31,6 +31,10 @@ function Order() {
   const openShipPopup = ()=>{
     window.open('/ship_popup', '_blank', 'width=500,height=974')
   }
+  /* 쿠폰목록 여는 js */
+  const openCouponPopup = ()=>{
+    window.open('/coupon_popup', '_blank', 'width=760,height=430')
+  }
 
   return (
     <>
@@ -79,7 +83,7 @@ function Order() {
 
               {/* 할인쿠폰 시작*/}
               <form className="card">
-                <a className="btn btn-secondary">쿠폰 조회/목록</a>
+                <a className="btn btn-secondary" onClick={openCouponPopup}>쿠폰 조회/목록</a>
               </form>
               {/* 할인쿠폰 끝 */}
             </div>
