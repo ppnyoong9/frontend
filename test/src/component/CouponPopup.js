@@ -21,7 +21,7 @@ function CouponPopup() {
             <tr>
               <td className="left">
                 <input type="radio" className="coup_radio" name="coup_radio" />
-                <span>회원가입 축하 쿠폰</span>
+                <span className="coup_span">회원가입 축하 쿠폰</span>
               </td>
               <td>1개</td>
               <td>7%</td>
@@ -34,7 +34,7 @@ function CouponPopup() {
                   className="coup_radio"
                   name="coup_radio"
                 />
-                <span>헤이 트라이 트라이 먹어보고 말해</span>
+                <span className="coup_span">헤이 트라이 트라이 먹어보고 말해</span>
               </td>
               <td>1개</td>
               <td>4%</td>
@@ -43,10 +43,10 @@ function CouponPopup() {
           </tbody>
         </table>
         <div className="btn-group">
-          <a href="" onClick="" className="btn btn-delete">
+          <a href="" onClick="" className="coup-table-btn btn-delete">
             취소
           </a>
-          <a href="" onClick="" className="btn btn-choose">
+          <a href="" onClick="" className="coup-table-btn btn-choose">
             쿠폰선택
           </a>
         </div>

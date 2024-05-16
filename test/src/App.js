@@ -11,6 +11,7 @@ import { Route, Routes } from "react-router-dom";
 import OrderList from "./component/OrderList.js";
 import OrderDetail from "./component/OrderDetail.js";
 import CouponPopup from "./component/CouponPopup.js";
+import ShipForm from "./component/ShipForm.js";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/order" element={ <Order/>}/>
       <Route path="/order_list" element={ <OrderList/>}/>
       <Route path="/ship_popup" element={ <ShipPopup/>}/>
+      <Route path="/ship_form" element={ <ShipForm/>}/>
       <Route path="/coupon_popup" element={ <CouponPopup/>}/>
       <Route path="/order_detail" element={ <OrderDetail/>}/>
     </Routes>

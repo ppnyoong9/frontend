@@ -76,25 +76,25 @@ td {
   -webkit-box-sizing: border-box;
 }
 
-.n-popup-wrap .popup-tit {
+.ship-popup-wrap .popup-tit {
   font-size: 24px;
   line-height: 36px;
   padding-bottom: 14px;
 }
 
-.popup-address-list .n-link {
+.popup-address-list .ship-link {
   position: absolute;
   top: 28px;
   right: 20px;
 }
 
-.popup-address-list .n-link span {
+.popup-address-list .ship-link span {
   display: inline-block;
   margin-right: 4px;
   vertical-align: middle;
 }
 
-.n-link {
+.ship-link {
   display: inline-block;
   line-height: 1.5;
   font-size: 14px;
@@ -104,35 +104,35 @@ td {
   background: none;
 }
 
-.n-addr-info .addr-name {
+.ship-addr-info .addr-name {
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 18px;
   line-height: 1.5;
 }
 
-.n-addr-info .n-label.delv.reserv {
+.ship-addr-info .ship-label.delv.reserv {
   color: #497539;
   border: 1px solid #497539;
 }
 
-.n-addr-info .n-label.delv {
+.ship-addr-info .ship-label.delv {
   display: inline-block;
   padding: 0 7px;
   font-weight: normal;
   font-size: 14px;
   line-height: 22px;
 }
-.n-addr-info .n-label {
+.ship-addr-info .ship-label {
   margin-left: 6px;
   vertical-align: middle;
 }
 
-.n-addr-info .phone-no:first-of-type {
+.ship-addr-info .phone-no:first-of-type {
   padding-left: 0;
 }
 
-.n-addr-info .phone-no {
+.ship-addr-info .phone-no {
   position: relative;
   display: inline-block;
   padding-left: 23px;
@@ -140,7 +140,7 @@ td {
   font-size: 14px;
   line-height: 1.5;
 }
-.n-addr-info .txt-addr {
+.ship-addr-info .txt-addr {
   clear: both;
   margin-top: 5px;
   color: #333;
@@ -148,28 +148,28 @@ td {
   line-height: 1.5;
 }
 
-.n-addr-info .n-btn-group .btn-left,
-.n-addr-info .n-btn-group .btn-right {
+.ship-addr-info .ship-btn-group .btn-left,
+.ship-addr-info .ship-btn-group .btn-right {
   top: 14px;
 }
 
-.n-btn-group .btn-left,
-.n-btn-group .btn-right {
+.ship-btn-group .btn-left,
+.ship-btn-group .btn-right {
   float: none;
   position: absolute;
   top: 20px;
   z-index: 1;
 }
-.n-btn-group .btn-right {
+.ship-btn-group .btn-right {
   right: 0;
 }
 
-.n-addr-info .btn-left .n-btn {
+.ship-addr-info .btn-left .ship-btn {
   min-width: 50px;
   margin-right: 6px;
 }
 
-.n-btn-group {
+.ship-btn-group {
   min-height: 32px;
   text-align: center;
   padding-top: 20px;
@@ -178,7 +178,7 @@ td {
   position: relative;
 }
 
-.n-addr-info {
+.ship-addr-info {
   clear: both;
   padding-bottom: 5px;
   word-break: break-all;
@@ -190,22 +190,22 @@ td {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.n-btn.btn-accent {
+.ship-btn.btn-accent {
   background-color: #d4d4d4;
 }
-.n-btn.btn-accent:hover {
+.ship-btn.btn-accent:hover {
   background-color: #5f8d4e;
 }
 .btn-sm.btn-default:hover {
   border: 1px solid #020202;
 }
 
-.n-btn-group a {
+.ship-btn-group a {
   text-decoration: none;
   color: inherit;
 }
 
-.n-btn {
+.ship-btn {
   display: inline-block;
   min-width: 100px;
   height: 40px;
@@ -223,18 +223,18 @@ td {
   transition: border 0.2s, background 0.2s ease-in-out;
 }
 
-.n-paging {
+.ship-paging {
   text-align: center;
   padding-top: 20px;
   clear: both;
 }
 
-.n-paging .page.is-active {
+.ship-paging .page.is-active {
   font-weight: bold;
   color: #000000;
 }
 
-.n-paging .page {
+.ship-paging .page {
   display: inline-block;
   width: 28px;
   line-height: 22px;
@@ -246,15 +246,6 @@ td {
   padding: 0;
   background: none;
 }
-button {
-  appearance: none;
-  font-size: inherit;
-  border: 0;
-  cursor: pointer;
-  background: none;
-}
 
-button,
-select {
-  text-transform: none;
-}
+
+

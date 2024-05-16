@@ -14,7 +14,7 @@
     color: #5f8d4e;
 }
 
-span{
+.coup_span{
     padding-left: 20px;
 }
 
@@ -32,7 +32,7 @@ span{
   border-bottom: none;
 }
 
-th {
+.coup-table th {
   height: 52px;
   border-bottom: 1px solid #000000;
   font-size: 16px;
@@ -44,13 +44,13 @@ th {
   text-align: left;
 }
 
-td{
+.coup-table td{
         padding: 10px;
         box-sizing: border-box;
         vertical-align: middle;
 }
 
-button {
+.coup-table button {
     appearance: none;
     font-size: inherit;
     border: 0;
@@ -58,7 +58,7 @@ button {
     background: none;
   }
 
-.btn {
+.coup-table-btn {
     display: inline-block;
     min-width: 100px;
     height: 40px;
@@ -89,12 +89,12 @@ button {
     color: #000000;
   }
 
-  .btn.btn-delete {
+  .btn-delete {
     border: 1px solid #888888;
     background-color: #f1f1f1;
     color: #000000;
 }
-  .btn.btn-delete:hover {
+  .btn-delete:hover {
     border: 1px solid #888888;
     background-color: #d4d4d4;
     color: #000000;

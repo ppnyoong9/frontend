@@ -1,4 +1,4 @@
-h2 {
+.productBox h2 {
     width:100%;
 }
 
@@ -115,17 +115,17 @@ h2 {
     border-top: 1px solid rgb(195, 194, 194);
 }
 
-td{
+.productBox td{
     padding: 15px 5px;
 }
-th{
+.productBox th{
     padding-bottom: 10px;
 }
 
 /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
 @media all and (min-width:270px) and (max-width:800px) {
    
-    h2 {
+    .productBox h2 {
         font-size: 9px;
         width: 80%;
     }
@@ -150,7 +150,7 @@ th{
     .tbody1 {
         font-size: 9px;
     }
-    th  {
+    .productBox th  {
         font-size: 9px;
     }
 
@@ -168,7 +168,7 @@ th{
         font-size: 6px;
     } 
 
-    .bottomBtn {
+    .productBox .bottomBtn {
         width: 100px;
         height: 30px;
         border-radius: 7px;

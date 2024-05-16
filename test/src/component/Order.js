@@ -33,7 +33,7 @@ function Order() {
   }
   /* 쿠폰목록 여는 js */
   const openCouponPopup = ()=>{
-    window.open('/coupon_popup', '_blank', 'width=760,height=430')
+    window.open('/coupon_popup', '_blank', 'width=900,height=600')
   }
 
   return (
@@ -247,7 +247,7 @@ function Order() {
                 {/* 상품정보시작 */}
                 <hr className="my-4" />
                 <h4 className="mb-3">상품정보</h4>
-                <table class="table">
+                <table className="table order-table">
                   <thead>
                     <tr>
                       <th scope="col">상품정보</th>
@@ -258,17 +258,16 @@ function Order() {
                   </thead>
 
                   {/* 상품1개 */}
-                  <tbody>
+                  <tbody className="order-product-tbody">
                     <tr>
                       <td>
-                        <div class="media">
-                          <div class="d-flex">
+                        <div className="media">
+                          <div className="d-flex">
                             <img
                               src={"./image/lunchBox.jpg"}
-                              style={{ width: "100px" }}
                               alt="Product Image"
                             />
-                            <div class="media-body p-2 ">
+                            <div className="media-body p-2 ">
                               <p>브랜치얼스 23종 도시락 1일 2식</p>
                               <p>&#91;옵션 : 1주&#93;</p>
                             </div>
@@ -287,7 +286,7 @@ function Order() {
                     </tr>
                   </tbody>
                   {/* 상품1개 끝 */}
-                  <tfoot style={{lineHeight:'50px'}}>
+                  <tfoot className="order-product-tfoot" style={{lineHeight:'50px'}}>
                     <td></td>
                     <td></td>
                       <td>총 주문 금액</td>

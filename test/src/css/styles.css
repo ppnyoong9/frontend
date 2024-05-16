@@ -20,7 +20,7 @@ html body {
 }
 
 /* Headers start */
-.form-control-dark {
+/* .form-control-dark {
     border-color: var(--bs-gray);
   }
   .form-control-dark:focus {
@@ -120,7 +120,7 @@ html body {
   .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
   }
-  
+   */
 /* Headers end */
 
 /* Main start */

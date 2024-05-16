@@ -38,7 +38,7 @@ function CartList() {
       >
         <div className="productBox">
           <h2>장바구니</h2>
-          <table className="Table table1">
+          <table className=" table1">
             <tr>
               <th className="checkbox-th">
                 <CustomCheckbox
