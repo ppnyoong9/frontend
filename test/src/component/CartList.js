@@ -36,7 +36,7 @@ function CartList() {
           alignItems: "center",
         }}
       >
-        <div className="MenuBox">
+        <div className="productBox">
           <h2>장바구니</h2>
           <table className="Table table1">
             <tr>
@@ -49,7 +49,7 @@ function CartList() {
               </th>
               <th>이미지</th>
               <th>상품정보</th>
-              <th>수량</th>
+              {/* <th>수량</th> */}
               <th>가격</th>
               <th>선택</th>
             </tr>
@@ -60,23 +60,27 @@ function CartList() {
                 .fill()
                 .map((_, index) => (
                   <tr className="product-tr">
-                    <td className="checkbox-td">
                       {/* 개별 체크박스 시작*/}
+                    <td className="checkbox-td">
                       <CustomCheckbox
                         checked={isCheckedItems[index]}
                         onChange={(isChecked) =>
                           handleCheckItem(index, isChecked)
                         }
                       />
-                      {/* 개별 체크박스 끝*/}
                     </td>
+                      {/* 개별 체크박스 끝*/}
                     <td>
                       <img src={"./image/lunchBox.jpg"} alt="Product Image" />
                     </td>
-                    <td>브랜치얼스 23종 도시락 1일 2식</td>
                     <td>
-                      <QuantityCounter />
+                      <span style={{display:'block'}}>브랜치얼스 23종 도시락 1일 2식</span>
+                      <span style={{display:'block'}}>&#91;옵션 : 1주&#93;</span>
+                    
                     </td>
+                    {/* <td>
+                      <QuantityCounter />
+                    </td> */}
                     <td>595,000원</td>
                     <td>
                       <button className="buttTxt">삭제</button>

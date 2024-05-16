@@ -1,0 +1,49 @@
+.order-filter {
+    display: flex;
+    align-items: center;
+    margin: 48px 0 24px;
+}
+
+.order-filter-period {
+    display: flex;
+    align-items: center;
+}
+
+.order-filter-period__tab {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+.order-filter-period__tab__button--active {
+    background-color: #0078ff;
+    color: #ffffff;
+}
+.order-filter-period__tab__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    width: 61px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+    font-size: 13px;
+    color: #6e6e6e;
+}
+
+.order-filter-period__tab__button {
+    padding: 0;
+    border: 0;
+    background: none;
+}
+.order-filter-period__tab__button {
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    border: 0;
+    cursor: pointer;
+    background: none;
+}
+.order-filter-period__tab__button:last-child {
+    margin-right: 0;
+}

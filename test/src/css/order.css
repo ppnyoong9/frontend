@@ -79,19 +79,42 @@
   display: block !important;
 }
 
-.form-check{
-  padding: 5px 0px;
-}
 
 .addrList {
-  display: block;
-    width: 20%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
+    padding: .400rem .75rem;
+    font-size: 100%;
     font-weight: 400;
     color: var(--bs-body-color);
-    background-color: rgb(233, 233, 233);
+    background-color: var(--bs-tertiary-bg);
     border: var(--bs-border-width) solid var(--bs-border-color);
     border-radius: var(--bs-border-radius);
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
+td {
+  font-size: 15px;
+}
+
+
+.buttTxt {
+  display: inline-block; 
+  width: 50px;
+  border: 1px solid rgb(222, 221, 221);
+  border-radius: 5px;
+  cursor: pointer;
+  background-color:var(--bs-tertiary-bg);
+  transition: all 0.3s;
+} 
+
+ .buttTxt:hover {
+  background-color: rgb(226, 226, 226);
+} 
+
+@media all and (min-width:270px) and (max-width:800px) {
+ 
+  td  {
+      font-size: 9px;
+  }
+
+
+} 

@@ -22,9 +22,16 @@ js 살펴봐야함
     }, false)
   })
 })() 
+
 */
 
 function Order() {
+
+  /* 배송지목록 여는 js */
+  const openShipPopup = ()=>{
+    window.open('/ship_popup', '_blank', 'width=500,height=974')
+  }
+
   return (
     <>
       <div className="container">
@@ -71,25 +78,15 @@ function Order() {
               {/* 결제정보 끝 */}
 
               {/* 할인쿠폰 시작*/}
-              <form className="card p-2">
-                <div className="input-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Promo code"
-                  />
-                  <button type="submit" className="btn btn-secondary">
-                    Redeem
-                  </button>
-                </div>
+              <form className="card">
+                <a className="btn btn-secondary">쿠폰 조회/목록</a>
               </form>
               {/* 할인쿠폰 끝 */}
-
-              {/* 배송지 시작 */}
             </div>
             <div className="col-md-7 col-lg-8">
               <h4 className="mb-4">배송지</h4>
               <form className="needs-validation" noValidate>
+                {/* 배송지 시작 */}
                 <div className="row g-3">
                   {/* 받는사람 시작 */}
                   <div className="col-12">
@@ -152,11 +149,17 @@ function Order() {
                   {/* 휴대폰 번호  끝 */}
 
                   {/* 주소 시작 */}
-                  <div style={{display: 'flex', alignItems: 'center'}}>
-                  <label htmlFor="address" className="form-label" style={{marginRight:'40px' }}>
-                    주소 
-                  </label>
-                  <button className="addrList" type="button"> 배송지 목록</button>
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <label
+                      htmlFor="address"
+                      className="form-label"
+                      style={{ marginRight: "40px", marginBottom: "0" }}
+                    >
+                      주소
+                    </label>
+                    <button className="addrList" type="button" onClick={openShipPopup}>
+                      배송지 목록
+                    </button>
                   </div>
                   <div className="input-group has-validation">
                     <input
@@ -189,7 +192,7 @@ function Order() {
                   <div className="form-group">
                     <select
                       className="form-select"
-                      id="hp"
+                      id="sReq"
                       style={{ color: "rgba(33, 37, 41, 0.75)" }}
                     >
                       <option value="">
@@ -209,38 +212,91 @@ function Order() {
                       <option value="sReq-input">직접 입력</option>
                     </select>
                   </div>
+                  {/* 선택사항 ( 체크박스) 시작*/}
+
+                  <div className="form-check" style={{ marginLeft: "10px" }}>
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="same-address"
+                    />
+                    <label className="form-check-label" htmlFor="same-address">
+                      기본 배송지 불러오기
+                    </label>
+                  </div>
+
+                  <div className="form-check" style={{ marginLeft: "10px" }}>
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id="save-addr"
+                    />
+                    <label className="form-check-label" htmlFor="save-info">
+                      이 배송지를 저장합니다.
+                    </label>
+                  </div>
+                  {/* 선택사항 ( 체크박스) 끝 */}
                   <div className="invalid-feedback">주소를 입력해주세요.</div>
                   {/* 주소 끝 */}
                 </div>
                 {/* 배송지 끝 */}
+                {/* 상품정보시작 */}
+                <hr className="my-4" />
+                <h4 className="mb-3">상품정보</h4>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">상품정보</th>
+                      <th scope="col">상품할인</th>
+                      <th scope="col">가격</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
 
+                  {/* 상품1개 */}
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="media">
+                          <div class="d-flex">
+                            <img
+                              src={"./image/lunchBox.jpg"}
+                              style={{ width: "100px" }}
+                              alt="Product Image"
+                            />
+                            <div class="media-body p-2 ">
+                              <p>브랜치얼스 23종 도시락 1일 2식</p>
+                              <p>&#91;옵션 : 1주&#93;</p>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div>
+                          <p>-30000원</p>
+                        </div>
+                      </td>
+                      <td>566,000원</td>
+                      <td>
+                        <button className="buttTxt">삭제</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                  {/* 상품1개 끝 */}
+                  <tfoot style={{lineHeight:'50px'}}>
+                    <td></td>
+                    <td></td>
+                      <td>총 주문 금액</td>
+                      <td>563,000원</td>
+                  </tfoot>
+                </table>
+
+                {/* 상품정보 끝 */}
+
+                {/* 결제 시작 */}
                 <hr className="my-4" />
 
-                <div className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="same-address"
-                  />
-                  <label className="form-check-label" htmlFor="same-address">
-                    기본 배송정보 불러오기
-                  </label>
-                </div>
-
-                <div className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="save-info"
-                  />
-                  <label className="form-check-label" htmlFor="save-info">
-                    이 배송지를 저장합니다.
-                  </label>
-                </div>
-
-                <hr className="my-4" />
-
-                <h4 className="mb-3">Payment</h4>
+                <h4 className="mb-3">결제</h4>
 
                 <div className="my-3">
                   <div className="form-check">
@@ -253,31 +309,31 @@ function Order() {
                       required
                     />
                     <label className="form-check-label" htmlFor="credit">
-                      Credit card
+                      신용카드
                     </label>
                   </div>
                   <div className="form-check">
                     <input
-                      id="debit"
+                      id="cash"
                       name="paymentMethod"
                       type="radio"
                       className="form-check-input"
                       required
                     />
                     <label className="form-check-label" htmlFor="debit">
-                      Debit card
+                      무통장입금
                     </label>
                   </div>
                   <div className="form-check">
                     <input
-                      id="paypal"
+                      id="npay"
                       name="paymentMethod"
                       type="radio"
                       className="form-check-input"
                       required
                     />
                     <label className="form-check-label" htmlFor="paypal">
-                      PayPal
+                      네이버페이
                     </label>
                   </div>
                 </div>
@@ -285,7 +341,7 @@ function Order() {
                 <div className="row gy-3">
                   <div className="col-md-6">
                     <label htmlFor="cc-name" className="form-label">
-                      Name on card
+                      카드 선택
                     </label>
                     <input
                       type="text"
@@ -298,7 +354,7 @@ function Order() {
                       Full name as displayed on card
                     </small>
                     <div className="invalid-feedback">
-                      Name on card is required
+                      카드사를 선택해주세요.
                     </div>
                   </div>
 
@@ -350,12 +406,13 @@ function Order() {
                     </div>
                   </div>
                 </div>
-
+                {/* 결제 끝 */}
                 <hr className="my-4" />
-
+                {/* 제출 버튼 */}
                 <button className="w-100 btn btn-primary btn-lg" type="submit">
-                  Continue to checkout
+                  결제하기
                 </button>
+                {/* 제출 버튼 */}
               </form>
             </div>
           </div>
