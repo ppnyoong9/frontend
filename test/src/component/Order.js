@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/order.css";
 
 /*
@@ -26,15 +26,25 @@ js 살펴봐야함
 */
 
 function Order() {
+  /* 배송지 목록 열기 */
+  const openShipPopup = () => {
+    window.open("/ship_popup", "_blank", "width=500,height=974");
+  };
+  /* 쿠폰 목록 열기 */
+  const openCouponPopup = () => {
+    window.open("/coupon_popup", "_blank", "width=900,height=600");
+  };
 
-  /* 배송지목록 여는 js */
-  const openShipPopup = ()=>{
-    window.open('/ship_popup', '_blank', 'width=500,height=974')
-  }
-  /* 쿠폰목록 여는 js */
-  const openCouponPopup = ()=>{
-    window.open('/coupon_popup', '_blank', 'width=900,height=600')
-  }
+  /* 배송요구사항 직접입력 선택 시 */
+  const [showTextarea, setShowTextarea] = useState(false);
+
+  const handleChange = (e) => {
+    if (e.target.value === "sReq-input") {
+      setShowTextarea(true);
+    } else {
+      setShowTextarea(false);
+    }
+  };
 
   return (
     <>
@@ -83,7 +93,9 @@ function Order() {
 
               {/* 할인쿠폰 시작*/}
               <form className="card">
-                <a className="btn btn-secondary" onClick={openCouponPopup}>쿠폰 조회/목록</a>
+                <a className="btn btn-secondary" onClick={openCouponPopup}>
+                  쿠폰 조회/목록
+                </a>
               </form>
               {/* 할인쿠폰 끝 */}
             </div>
@@ -113,7 +125,7 @@ function Order() {
                   {/* 받는사람 끝 */}
                   {/* 휴대폰 번호 시작 */}
                   <div className="col-12">
-                    <label htmlFor="username" className="form-label">
+                    <label htmlFor="hp" className="form-label">
                       휴대전화
                     </label>
                     <div className="input-group has-validation">
@@ -133,7 +145,7 @@ function Order() {
                       <input
                         type="text"
                         className="form-control"
-                        id="username"
+                        id="hp"
                         placeholder=""
                         required
                       />
@@ -141,7 +153,7 @@ function Order() {
                       <input
                         type="text"
                         className="form-control"
-                        id="username"
+                        id="hp"
                         placeholder=""
                         required
                       />
@@ -161,7 +173,11 @@ function Order() {
                     >
                       주소
                     </label>
-                    <button className="addrList" type="button" onClick={openShipPopup}>
+                    <button
+                      className="addrList"
+                      type="button"
+                      onClick={openShipPopup}
+                    >
                       배송지 목록
                     </button>
                   </div>
@@ -198,6 +214,7 @@ function Order() {
                       className="form-select"
                       id="sReq"
                       style={{ color: "rgba(33, 37, 41, 0.75)" }}
+                      onChange={handleChange}
                     >
                       <option value="">
                         &lt; 배송요청사항 (선택사항) &gt;{" "}
@@ -213,8 +230,17 @@ function Order() {
                       </option>
                       <option value="sReq-4">빠른 배송 부탁드립니다.</option>
                       <option value="sReq-5">택배함에 보관해 주세요.</option>
-                      <option value="sReq-input">직접 입력</option>
+                      <option value="sReq-input">직접 입력하기</option>
                     </select>
+                    {showTextarea && (
+                      <textarea
+                        id="sReqTextarea "
+                        className="sReqTextarea form-control"
+                        placeholder="최대 50자까지 가능합니다."
+                        maxlength="50"
+                        style={{ marginTop: "10px" }}
+                      />
+                    )}
                   </div>
                   {/* 선택사항 ( 체크박스) 시작*/}
 
@@ -238,6 +264,21 @@ function Order() {
                     <label className="form-check-label" htmlFor="save-info">
                       이 배송지를 저장합니다.
                     </label>
+
+                    {/* 주문요청사항 시작 */}
+                    <div className="form-group">
+                      <label htmlFor="orderReqTextarea" className="form-label">
+                      받는사람
+                      </label>
+                        <textarea
+                          id="orderReqTextarea "
+                          className="orderReqTextarea form-control"
+                          placeholder="최대 100자까지 가능합니다."
+                          maxlength="100"
+                          style={{ marginTop: "10px" }}
+                        />
+                    </div>
+                    {/* 주문요청사항 끝*/}
                   </div>
                   {/* 선택사항 ( 체크박스) 끝 */}
                   <div className="invalid-feedback">주소를 입력해주세요.</div>
@@ -286,11 +327,14 @@ function Order() {
                     </tr>
                   </tbody>
                   {/* 상품1개 끝 */}
-                  <tfoot className="order-product-tfoot" style={{lineHeight:'50px'}}>
+                  <tfoot
+                    className="order-product-tfoot"
+                    style={{ lineHeight: "50px" }}
+                  >
                     <td></td>
                     <td></td>
-                      <td>총 주문 금액</td>
-                      <td>563,000원</td>
+                    <td>총 주문 금액</td>
+                    <td>563,000원</td>
                   </tfoot>
                 </table>
 
